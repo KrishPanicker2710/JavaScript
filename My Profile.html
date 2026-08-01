@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "font-family: Arial; text-align: center;">
+    <h2>Game Profile</h2>
+    <button onclick="show()">Show</button>
+    <p>Name: <span id="n"></span></p>
+    <p>Score: <span id="s"></span></p>
+    <p>Rank: <span id="r"></span></p>
+    <p>Greeting: <span id="g"></span></p>
+    <p>Stars: <span id="st"></span></p>
+    <script>
+        function show() {
+            let name = "Krish", score = 75, top = 100;
+            let rank = score >= 80 ? "Gold" : score >= 50 ? "Silver" : "Bronze";
+            let h = new Date().getHours(), greet;
+            if (h < 12) greet = "Morning";
+            else if (h < 17) greet = "Afternoon";
+            else greet = "Evening";
+            let stars = "", i = 0;
+            while (i < 5) { stars += "* "; i++; }
+            n.innerHTML = name;
+            s.innerHTML = score + "/" + top;
+            r.innerHTML = rank;
+            g.innerHTML = greet;
+            st.innerHTML = stars;
+        }
+    </script>
+</body>
+</html>
