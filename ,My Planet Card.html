@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial;
+                background: #eef;
+            }
+            .card {
+                display: inline-block;
+                border: 2px solid red;
+                padding: 10px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="show()">Show Planets</button>
+        <div id="cards"></div>
+        <script>
+            class Planet {
+                constructor(n, f) {this.n = n; this.f = f}
+            }
+            function show() {
+                let p = [
+                    new Planet("Earth", "Life"),
+                    new Planet("Mars", "Red Planet"),
+                    new Planet("Saturn", "Rings")
+                ];
+                cards.innerHTML = "";
+                p.forEach(x => {
+                    cards.innerHTML += `<div class = "card"><h3>${x.n}</h3><p>${x.f}</p></div>`;                
+                });
+            }
+        </script>
+    </body>
+</html>
