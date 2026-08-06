@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Superhero Power Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(#0B1026,#1E3A8A,#4F46E5,#0F172A);
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ff4d4d;
+    }
+    h2 {
+      color: #FFD700;
+      text-shadow: 0 0 10px #3B82F6;
+    }
+    p {
+      color: #444444;
+    }
+    button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+    .hero-card {
+      background-color: white;
+      border: 3px solid #ff4d4d;
+      border-radius: 12px;
+      width: 220px;
+      padding: 18px;
+    }
+    .hero-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #222222;
+    }
+    .hero-power {
+      color: #0057b8;
+      font-weight: bold;
+    }
+    .hero-mission {
+      color: #666666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Superhero Power Cards</h1>
+  <h2>The Genesis Initiative - "Four Heroes. One Purpose. Infinite Hope"</h2>
+  <button onclick="showHeroes()">Show Superheroes</button>
+  <div class="card-container" id="heroCards"></div>
+  <script>
+    class Superhero {
+      constructor(name, power, ultimatepower) {
+        this.name = name;
+        this.power = power;
+        this.ultimatepower = ultimatepower;
+      }
+     describeHero() {
+        return "<div class='hero-card'>" +
+               "<p class='hero-name'>" + this.name + "</p>" +
+               "<p class='hero-power'>Power: " + this.power + "</p>" +
+               "<p class='hero-mission'>Ultimate Power: " + this.ultimatepower + "</p>" +
+               "</div>";
+      }
+    }
+    function showHeroes() {
+      // Creating Objects
+      let hero1 = new Superhero(
+        "Runeheart",
+        "Can summon powers of mythical creatures",
+        "Can use all runes at once letting him access the powers of many mythical creatures at one time."
+      );
+      let hero2 = new Superhero(
+        "Void Walker",
+        "He has control over space, energy and nothingness itself",
+        "He can surround the battlefield with a massive sphere of void energy which absorbs the opponents powers for sometime."
+      );
+      let hero3 = new Superhero(
+        "Omni",
+        "Can copy his opponents power and improves it",
+        "He can combine the all the powers he has absorbed to give him an ultimate form which if you look at you will burn to ashes, he also emanates a white aura of energy."
+      );
+      let hero4 = new Superhero(
+        "Eternis",
+        "He is invulnerable and has unlimited strength and stamina also he can create weapons out of pure cosmic energy",
+        "On unleashing his full power, his armour becomes radiant white and gold, glowing stars appear behind and his strength and cosmic abilities reach their peak."
+      );
+      document.getElementById("heroCards").innerHTML =
+        hero1.describeHero() +
+        hero2.describeHero() +
+        hero3.describeHero() +
+        hero4.describeHero();
+    }
+  </script>
+</body>
+</html>
