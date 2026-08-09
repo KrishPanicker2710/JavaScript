@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: lavender;
+            color: darkviolet;
+        }
+        .box {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Playlist Sorter</h1>
+    <h3>Song Names</h3>
+    <button onclick="az()">A to Z</button>
+    <button onclick="za()">Z to A</button>
+    <h3>Play Counts</h3>
+    <button onclick="least()">Least First</button>
+    <button onclick="most()">Most First</button>
+    <h3>Label Play Counts</h3>
+    <button onclick="label()">Add Label</button>
+    <div id="l" class="box"></div>
+    <script>
+        let songs = ["Zoom", "Bounce", "Glow", "Rush", "Spark"];
+        let plays = [320, 85, 210, 50, 175];
+        n.innerHTML = songs;
+        p.innerHTML = plays;
+        l.innerHTML = "Press button";
+        function az() {n.innerHTML = songs.sort()}
+        function za() {n.innerHTML = songs.sort().reverse()}
+        function least() {p.innerHTML = plays.sort((a, b) => a - b)}
+        function most() {p.innerHTML = plays.sort((a, b) => b - a)}
+        function label() {l.innerHTML = plays.map(x => x + " plays")}
+    </script>
+</body>
+</html>
