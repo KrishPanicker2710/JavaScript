@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #fffacd;
+            color: #ff8c00;
+            font-family: Arial;
+        }
+        .box {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 7px;
+            background: #ffc107;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Magic Word Lab</h1>
+    <h3>What Type is it?</h3>
+    <button onclick="checkTypes()">Reveal</button>
+    <div id="typeResult" class="box">Press the button</div>
+    <h3>Switch the Type</h3>
+    <input id="numIn" placeholder="Try 42">
+    <button onclick="toStr()">Text</button>
+    <button onclick="toNum()">Number</button>
+    <div id="convResult" class="box">Enter a value!</div>
+    <h3>Find and Swap</h3>
+    <input id="findW" placeholder="Find Word">
+    <input id="swapW" placeholder="Replace with">
+    <button onclick="doSearch()">Find</button>
+    <button onclick="doReplace()">Swap</button>
+    <div id="srResult" class="box">The dragon flew over the big castle.</div>
+    <h3>Catch the Mistake</h3>
+    <input id="divIn" placeholder="Divide 100 by...">
+    <button onclick="trySafe()">Try</button>
+    <div id="errResult" class="box">Enter Something</div>
+    <script>
+        let sen = "The dragon flew over the big castle.";
+        function checkTypes() {
+            typeResult.innerText = "42: " + typeof 42 + "\nAlex: " + typeof "Alex" + "\ntrue: " + typeof true;
+        }
+        function toStr() {
+            convResult.innerHTML = typeof String(numIn.value) + " : " + String(numIn.value);
+        }
+        function toNum() {
+            convResult.innerHTML = typeof Number(numIn.value) + " : " + Number(numIn.value);
+        }
+    </script>
+</body>
+</html>
