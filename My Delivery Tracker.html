@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="save()">Save</button>
+    <button onclick="start()">Start</button>
+    <p id="x"></p>
+    <script>
+        let o = { item: "Pizza", price: 5};
+        function save() {
+            let j = JSON.srtingify(o);
+            x.innerHTML = j + "<br>" + JSON.parse(j).item + "$" + o.price;
+        }
+        function delay(n) { return new Promise(r => setTimeout(r, n))}
+        async function start() {
+            x.innerHTML = "Order recieved!";
+            setTimeout(() => x.innerHTML = "Preparing...", 1000);
+            await delay(3000);
+            x.innerHTML = "Out for delivery!";
+            await delay(2000);
+            x.innerHTML = "Order arrived!";
+        }
+    </script>
+</body>
+</html>
