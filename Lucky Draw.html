@@ -1,0 +1,53 @@
+
+<!DOCTYPE ht
+ml>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            background: aliceblue;
+            font-family: Arial;
+        }
+        input, 
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            background: navy;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lucky Draw</h1>
+    <p>Enter your name and guess a number to win!</p>
+    <input id="name" placeholder="Your name">
+    <p id="msg-name"></p>
+    <input id="guess" type="number" placeholder="Guess 1-5" min="1" max="5">
+    <p id="msg-guess"></p>
+    <button onclick="check()">Try My Luck</button>
+    <p id="result"></p>
+    <p id="timer"></p>
+    <script>
+        let s = 0;
+        setInterval(() => document.getElementById("timer").innerHTML = `You have been here for ${++s} seconds!`, 1000);
+        function check() {
+            let n = document.getElementById("name").value;
+            let g = document.getElementById("guess").value;
+            document.getElementById("msg-name").innerHTML = n ? "Great name!" : "Please enter your name!";
+            document.getElementById("msg-guess").innerHTML = g ? "Guess saved!" : "Please enter a guess!";
+            if (n && g) {
+                let l = Math.floor(Math.random() * 5) + 1;
+                document.getElementById("result").innerHTML = 
+                g == l ? `You win ${n}! The lucky number was ${l}!` : `So close, ${n}! The lucky number was ${l}.
+                Try Again`;
+            }
+        }
+    </script>
+</body>
+</html>
