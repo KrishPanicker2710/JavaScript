@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background: #252525;
+    font-family: Arial;
+    color: white;
+}
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("https://github.com/harshacc031-dot/img/blob/main/1.png?raw=true") center/cover;
+}
+h1 {
+    color: #ffc107;
+}
