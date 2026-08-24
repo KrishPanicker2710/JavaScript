@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+nav {
+    background: #222;
+    border-top: 2px solid #f2a900;
+    padding: 15px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+a:hover {
+    color: #f2a900;
+}
+i {
+    color: #f2a900;
+}
