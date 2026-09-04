@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross - Worlds Online Portal</title>
+    <style>
+        html {
+            min-height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            background-image:linear-gradient(#25104F, #0B0B12, #062B33);
+        }
+        h1, h2 {
+            color: #00E5FF;
+            text-align: center;
+        }
+        a, p, pre, h3 {
+            color: white;
+        }
+.special-offers {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+}
+.special-offers h2 {
+    color: #00E5FF;
+    font-size: 2.5em;
+    text-shadow: 0 0 12px #00E5FF;
+    margin-bottom: 10px;
+}
+.special-offers h3 {
+    color: #7C3AED;
+    font-size: 1.4em;
+    margin-bottom: 35px;
+}
+.offers-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+.offer-card {
+    background: #0B0B12;
+    border: 2px solid #7C3AED;
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 180px;
+    box-shadow: 0 0 15px #7C3AED;
+    transition: 0.3s;
+}
+.offer-card:hover {
+    transform: translateY(-8px);
+    border-color: #00E5FF;
+    box-shadow: 0 0 25px #00E5FF;
+}
+.offer-icon {
+    font-size: 2.5em;
+}
+.offer-card h4 {
+    color: #00E5FF;
+    font-size: 1.3em;
+    margin: 15px 0;
+}
+.offer-card p {
+    color: white;
+    font-size: 1em;
+    line-height: 1.6;
+}
+.offer-card strong {
+    color: #7C3AED;
+}
+.rating-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.rating-section h2 {
+    color: #00E5FF;
+    font-size: 2.3em;
+    text-shadow: 0 0 12px #00E5FF;
+}
+
+.rating-section p {
+    color: white;
+    font-size: 1.1em;
+}
+
+.rating-box {
+    background: #0B0B12;
+    border: 2px solid #7C3AED;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 25px auto;
+    box-shadow: 0 0 20px #7C3AED;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 8px;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: 3em;
+    color: #33333D;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #00E5FF;
+    text-shadow: 0 0 12px #00E5FF;
+}
+
+.rating-box button {
+    background: #7C3AED;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rating-box button:hover {
+    background: #00E5FF;
+    color: #0B0B12;
+    box-shadow: 0 0 15px #00E5FF;
+}
+
+#rating-message {
+    color: #00E5FF;
+    font-weight: bold;
+}
+.globe-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.globe-section h2 {
+    color: #00E5FF;
+    font-size: 2.5em;
+    text-shadow: 0 0 12px #00E5FF;
+}
+
+.globe-section > p {
+    color: white;
+    font-size: 1.1em;
+}
+
+.globe-box {
+    background: #0B0B12;
+    border: 2px solid #7C3AED;
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 550px;
+    margin: 25px auto;
+    box-shadow: 0 0 20px #7C3AED;
+}
+
+#globe {
+    font-size: 7em;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#destination {
+    color: #00E5FF;
+    font-size: 1.8em;
+    margin: 10px;
+}
+
+#dish {
+    color: white;
+    line-height: 1.6;
+}
+
+.globe-box button {
+    background: #7C3AED;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.globe-box button:hover {
+    background: #00E5FF;
+    color: #0B0B12;
+    box-shadow: 0 0 18px #00E5FF;
+}
+
+.spin {
+    animation: spinGlobe 1s ease-in-out;
+}
+
+@keyframes spinGlobe {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+.find-us {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.find-us h2 {
+    color: #00E5FF;
+    font-size: 2.5em;
+    text-shadow: 0 0 12px #00E5FF;
+}
+
+.find-us > p {
+    color: white;
+    font-size: 1.1em;
+}
+
+.location-container {
+    max-width: 650px;
+    margin: 30px auto;
+}
+
+.location-card {
+    background: #0B0B12;
+    border: 2px solid #7C3AED;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 0 20px #7C3AED;
+    transition: 0.3s;
+}
+
+.location-card:hover {
+    border-color: #00E5FF;
+    box-shadow: 0 0 25px #00E5FF;
+    transform: translateY(-5px);
+}
+
+.location-icon {
+    font-size: 4em;
+}
+
+.location-card h3 {
+    color: #00E5FF;
+    font-size: 1.8em;
+}
+
+.location-card h4 {
+    color: #7C3AED;
+    font-size: 1.3em;
+    margin-top: 25px;
+}
+
+.location-card p {
+    color: white;
+    line-height: 1.6;
+}
+
+.location-card button {
+    margin-top: 15px;
+    padding: 13px 25px;
+    background: #7C3AED;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.location-card button:hover {
+    background: #00E5FF;
+    color: #0B0B12;
+    box-shadow: 0 0 15px #00E5FF;
+}
+
+#location-message {
+    color: #00E5FF;
+    font-weight: bold;
+    margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to Cross - Worlds - "Your Passport to Great Food"</h1>
+    <h2>This is our <mark>official website</mark> where you can learn anything about our restaurant</h2>
+    <h3>🌍 My Story — The Beginning of Cross-Worlds</h3>
+    <p>
+        <pre>
+Cross-Worlds started with something I’ve always loved: <mark>new food and learning about different places around the world.</mark>
+Whenever I tried a dish from another country, I was amazed by how much more than flavour it could offer. A single meal could tell a story about a culture, a tradition, or a place I had never visited.
+That gave me an idea:
+"What if I could bring all those experiences together in one restaurant?"
+That idea became "Cross-Worlds".
+I imagined a place where you don't need a plane ticket to explore the world. You can sit at one table and travel from India to Italy, from Japan to Mexico, and from Korea to the Middle East—all through food.
+I created Cross-Worlds to share that feeling of discovery with everyone. I want every dish on the menu to feel like a little passport stamp and every visit to be a new adventure.
+For me, Cross-Worlds isn't just about serving food. "It's about curiosity, culture, and bringing people together through something everyone understands—great food."
+So welcome to my little journey around the world.
+"Take a seat, choose your destination, and let your taste buds do the travelling. ✈️🌎"
+"Cross-Worlds"
+"Your Passport to Great Food.""
+        </pre>
+    </p>
+<section class="special-offers">
+    <h2>🔥 SPECIAL OFFERS</h2>
+    <h3>Big Flavours. Bigger Deals.</h3>
+    <div class="offers-container">
+        <div class="offer-card">
+            <span class="offer-icon">🌎</span>
+            <h4>World Tour Wednesday</h4>
+            <p>Try 3 dishes from 3 different countries and get a <strong>FREE dessert!</strong></p>
+        </div>
+        <div class="offer-card">
+            <span class="offer-icon">🍕</span>
+            <h4>Global Combo</h4>
+            <p>Choose 1 Main Course + 1 Drink + 1 Dessert at a <strong>special combo price!</strong></p>
+        </div>
+        <div class="offer-card">
+            <span class="offer-icon">💜</span>
+            <h4>Student Passport</h4>
+            <p>Show your student ID and get <strong>10% OFF</strong> your meal.</p>
+        </div>
+        <div class="offer-card">
+            <span class="offer-icon">💙</span>
+            <h4>Weekend Food Drop</h4>
+            <p>Every weekend, a randomly selected dish gets <strong>20% OFF!</strong></p>
+        </div>
+        <div class="offer-card">
+            <span class="offer-icon">🌶️</span>
+            <h4>Spice Challenge</h4>
+            <p>Try one of our spicy dishes and earn a <strong>Cross-Worlds Spice Badge!</strong></p>
+        </div>
+        <div class="offer-card">
+            <span class="offer-icon">🍰</span>
+            <h4>Sweet Finish</h4>
+            <p>Order any main course and get <strong>15% OFF</strong> selected desserts.</p>
+        </div>
+    </div>
+    <section class="globe-section">
+
+    <h2>🌎 SPIN THE GLOBE</h2>
+    <p>Where are we eating today?</p>
+
+    <div class="globe-box">
+
+        <div id="globe">🌎</div>
+
+        <h3 id="destination">Ready to Explore?</h3>
+        <p id="dish">Click the button and discover your next food destination!</p>
+
+        <button onclick="spinGlobe()">✈️ SPIN THE GLOBE</button>
+
+    </div>
+
+</section>
+</section>
+    <p><mark>This is our menu. Please click on the link. <a href="Menu Card.html">Click Here!</a></mark></p>
+    <section class="find-us">
+
+    <h2>📍 FIND US</h2>
+    <p>Ready to start your food journey? Come visit us!</p>
+
+    <div class="location-container">
+
+        <div class="location-card">
+            <div class="location-icon">🌎</div>
+
+            <h3>Cross-Worlds</h3>
+
+            <p>📍 123 World Street, Food City</p>
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ hello@crossworlds.com</p>
+
+            <h4>🕐 Opening Hours</h4>
+            <p>Monday – Friday: 11:00 AM – 10:00 PM</p>
+            <p>Saturday – Sunday: 10:00 AM – 11:00 PM</p>
+
+            <button onclick="showLocation()">🧭 GET DIRECTIONS</button>
+
+            <p id="location-message"></p>
+        </div>
+
+    </div>
+
+</section>
+    <section class="rating-section">
+
+    <h2>⭐ RATE YOUR JOURNEY</h2>
+    <p>How was your Cross-Worlds experience?</p>
+
+    <div class="rating-box">
+
+        <div class="stars">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+        </div>
+
+        <p id="rating-message">Select a rating!</p>
+
+        <button onclick="submitRating()">Submit Rating</button>
+
+    </div>
+
+</section>
+<script>
+function submitRating() {
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const message = document.getElementById("rating-message");
+
+    if (rating) {
+        message.textContent = "Thanks for rating Cross-Worlds " + rating.value + " ⭐!";
+    } else {
+        message.textContent = "Please select a rating first!";
+    }
+}
+const destinations = [
+    {
+        country: "🇮🇳 India",
+        dish: "🍛 Try our Butter Chicken!"
+    },
+    {
+        country: "🇮🇹 Italy",
+        dish: "🍝 Try our Lasagna!"
+    },
+    {
+        country: "🇯🇵 Japan",
+        dish: "🍣 Try our Sushi!"
+    },
+    {
+        country: "🇰🇷 South Korea",
+        dish: "🍗 Try our Korean Fried Chicken!"
+    },
+    {
+        country: "🇲🇽 Mexico",
+        dish: "🌮 Try our Tacos!"
+    },
+    {
+        country: "🇪🇸 Spain",
+        dish: "🥘 Try our Paella Valenciana!"
+    },
+    {
+        country: "🇫🇷 France",
+        dish: "🥪 Try our Croque Monsieur!"
+    },
+    {
+        country: "🇧🇷 Brazil",
+        dish: "🥘 Try our Feijoada!"
+    },
+    {
+        country: "🇱🇧 Middle East",
+        dish: "🧆 Try our Falafel!"
+    }
+];
+
+function spinGlobe() {
+
+    const globe = document.getElementById("globe");
+    const destination = document.getElementById("destination");
+    const dish = document.getElementById("dish");
+
+    globe.classList.remove("spin");
+
+    void globe.offsetWidth;
+
+    globe.classList.add("spin");
+
+    destination.textContent = "🌎 Travelling...";
+
+    dish.textContent = "Finding your next destination! ✈️";
+
+    setTimeout(function() {
+
+        const random =
+            destinations[Math.floor(Math.random() * destinations.length)];
+
+        destination.textContent = random.country;
+        dish.textContent = random.dish;
+
+    }, 1000);
+}
+function showLocation() {
+    document.getElementById("location-message").textContent =
+        "🧭 Your food adventure starts here! 🌎";
+}
+</script>
+</body>
+</html>
